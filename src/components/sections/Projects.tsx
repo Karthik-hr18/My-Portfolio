@@ -117,7 +117,7 @@ export default function Projects({
                 <div className="p-6 flex-1 flex flex-col justify-between gap-6">
                   {/* Title & Copy */}
                   <div>
-                    <h4 className="text-lg font-bold text-foreground tracking-tight mb-2 group-hover:text-accent-indigo transition-colors">
+                    <h4 className="text-lg font-extrabold text-slate-950 tracking-tight mb-2 group-hover:text-accent-indigo transition-colors">
                       {project.title}
                     </h4>
                     <p className="text-[13px] md:text-sm text-muted leading-relaxed line-clamp-4">

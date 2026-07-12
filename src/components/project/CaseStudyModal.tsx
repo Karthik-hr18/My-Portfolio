@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import { Project } from "@/data/projects";
 import { motion } from "framer-motion";
-import { X, ExternalLink, ShieldAlert, Code2, Cpu, Wrench } from "lucide-react";
+import { X, ExternalLink, Code2, Cpu, Wrench } from "lucide-react";
 import { GithubIcon } from "@/components/ui/BrandIcons";
 
 interface CaseStudyModalProps {
@@ -32,6 +32,7 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
         exit={{ opacity: 0, scale: 0.95, y: 15 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
         className="relative w-full max-w-4xl h-[90vh] md:h-[85vh] bg-white border border-border-translucent rounded-2xl shadow-2xl flex flex-col z-10 overflow-hidden"
+        data-lenis-prevent
       >
         {/* Header */}
         <div className="flex items-center justify-between px-8 py-6 border-b border-border-translucent bg-[#f8f9fc]/80 backdrop-blur-md">
@@ -53,7 +54,7 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
         </div>
 
         {/* Content Scroll Panel */}
-        <div className="flex-1 overflow-y-auto px-8 py-8 space-y-8 custom-scrollbar">
+        <div className="flex-1 overflow-y-auto px-8 py-8 space-y-8 custom-scrollbar" data-lenis-prevent>
           {/* External Links */}
           <div className="flex gap-4">
             {project.github && (
@@ -146,70 +147,22 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
             </div>
           </div>
 
-          {/* Tradeoffs & Limits (Brutally Honest Audit) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Limitations */}
-            <div className="p-5 rounded-xl bg-red-50 border border-red-200/50 space-y-3 shadow-xs">
-              <div className="flex items-center gap-2 text-red-700">
-                <ShieldAlert className="w-4 h-4" />
-                <h5 className="text-xs font-semibold uppercase tracking-wider">
-                  Current Sandbox Limitations
-                </h5>
-              </div>
-              <ul className="space-y-2">
-                {project.limitations.map((limit, idx) => (
-                  <li key={idx} className="text-xs text-red-800 leading-relaxed flex items-start gap-2">
-                    <span className="text-red-500">•</span>
-                    <span>{limit}</span>
-                  </li>
-                ))}
-              </ul>
+          {/* Production Evolvement Path (Future roadmap details) */}
+          <div className="p-5 rounded-xl bg-emerald-50 border border-emerald-200/50 space-y-3 shadow-xs">
+            <div className="flex items-center gap-2 text-emerald-700">
+              <Wrench className="w-4 h-4" />
+              <h5 className="text-xs font-semibold uppercase tracking-wider">
+                Production Evolvement Path
+              </h5>
             </div>
-
-            {/* Production improvements */}
-            <div className="p-5 rounded-xl bg-emerald-50 border border-emerald-200/50 space-y-3 shadow-xs">
-              <div className="flex items-center gap-2 text-emerald-700">
-                <Wrench className="w-4 h-4" />
-                <h5 className="text-xs font-semibold uppercase tracking-wider">
-                  Production Evolvement Path
-                </h5>
-              </div>
-              <ul className="space-y-2">
-                {project.improvements.map((imp, idx) => (
-                  <li key={idx} className="text-xs text-emerald-800 leading-relaxed flex items-start gap-2">
-                    <span className="text-accent-emerald">•</span>
-                    <span>{imp}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Interview Questions */}
-          <div className="space-y-4 pt-4 border-t border-border-translucent">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-              Potential Technical Interview Questions
-            </h4>
-            <div className="space-y-3 text-xs bg-slate-50 p-4 rounded-xl border border-border-translucent shadow-xs">
-              {project.id === "summarizer" && (
-                <>
-                  <p className="text-foreground font-medium">Q: "FastAPI is single-threaded. How does it handle heavy processing like PDF extraction without locking up other users?"</p>
-                  <p className="text-muted italic mt-1">A: "We execute synchronous, CPU-bound parsing operations (like PyPDF2 and docx reader) inside FastAPI's internal thread pool using asyncio.to_thread. This shifts processing off the main event loop so concurrent I/O operations are never blocked."</p>
-                </>
-              )}
-              {project.id === "hiretrack" && (
-                <>
-                  <p className="text-foreground font-medium">Q: "What is the benefit of a Monorepo structure, and how did you configure npm workspaces for this project?"</p>
-                  <p className="text-muted italic mt-1">A: "The main benefit is shared code validation. I defined an npm workspace mapping packages/shared. This allows the backend and frontend to import the exact same Zod validation schemas, ensuring complete API synchronization and preventing validation mismatches."</p>
-                </>
-              )}
-              {project.id === "jobtracker" && (
-                <>
-                  <p className="text-foreground font-medium">Q: "How did you solve the problem of HTML5 drag-and-drop actions conflicting with page scrolling on mobile touch screens?"</p>
-                  <p className="text-muted italic mt-1">A: "We configured custom Dnd-kit sensors: a MouseSensor for desktops, and a TouchSensor with a 250ms activation delay and an 8px movement constraint limit for mobile screens. This ensures scrolling happens normally unless a card is pressed and held."</p>
-                </>
-              )}
-            </div>
+            <ul className="space-y-2">
+              {project.improvements.map((imp, idx) => (
+                <li key={idx} className="text-xs text-emerald-800 leading-relaxed flex items-start gap-2">
+                  <span className="text-accent-emerald">•</span>
+                  <span>{imp}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </motion.div>
