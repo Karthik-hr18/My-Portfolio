@@ -10,7 +10,7 @@ import { Project } from "@/data/projects";
 import { AnimatePresence, motion } from "framer-motion";
 import CaseStudyModal from "@/components/project/CaseStudyModal";
 import { Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
+import { GithubIcon, LinkedinIcon, LeetcodeIcon } from "@/components/ui/BrandIcons";
 
 export default function Home() {
   const [hoveredProjectIds, setHoveredProjectIds] = useState<string[] | null>(null);
@@ -64,6 +64,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="hover:text-foreground p-2 rounded-xl hover:bg-slate-50 transition-all"
               aria-label="GitHub Profile"
+              title="GitHub Profile"
             >
               <GithubIcon className="w-5 h-5" />
             </a>
@@ -73,13 +74,25 @@ export default function Home() {
               rel="noopener noreferrer"
               className="hover:text-foreground p-2 rounded-xl hover:bg-slate-50 transition-all"
               aria-label="LinkedIn Profile"
+              title="LinkedIn Profile"
             >
               <LinkedinIcon className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://leetcode.com/u/hQLLFYhybs/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground p-2 rounded-xl hover:bg-slate-50 transition-all"
+              aria-label="LeetCode Profile"
+              title="LeetCode Profile"
+            >
+              <LeetcodeIcon className="w-5 h-5" />
             </a>
             <a 
               href="#contact" 
               className="p-2 rounded-xl hover:bg-slate-50 hover:text-foreground transition-all"
               aria-label="Contact Email"
+              title="Contact Email"
             >
               <Mail className="w-5 h-5" />
             </a>

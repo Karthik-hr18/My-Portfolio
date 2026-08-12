@@ -2,7 +2,7 @@
 
 import React from "react";
 import { ArrowRight, Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
+import { GithubIcon, LinkedinIcon, LeetcodeIcon } from "@/components/ui/BrandIcons";
 import { motion, Variants } from "framer-motion";
 
 export default function Hero() {
@@ -40,7 +40,7 @@ export default function Hero() {
             <motion.div variants={itemVariants} className="flex items-center gap-5 pb-2 select-none">
               <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-slate-200/80 bg-slate-50 shadow-sm shrink-0 flex items-center justify-center">
                 <img 
-                  src="/assets/photo.jpg" 
+                  src="/assets/photo.jpeg" 
                   alt="Karthik Profile"
                   className="absolute inset-0 w-full h-full object-cover z-10"
                   onError={(e) => {
@@ -108,6 +108,15 @@ export default function Hero() {
                 title="LinkedIn Profile"
               >
                 <LinkedinIcon className="w-5 h-5" />
+              </a>
+              <a
+                href="https://leetcode.com/u/hQLLFYhybs/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted hover:text-foreground transition-colors"
+                title="LeetCode Profile"
+              >
+                <LeetcodeIcon className="w-5 h-5" />
               </a>
               <a
                 href="mailto:karthikhr676@gmail.com"
