@@ -47,7 +47,7 @@ export default function Home() {
             <a href="#timeline" className="px-3 py-2 rounded-xl hover:bg-slate-50 hover:text-foreground transition-all duration-200">Journey</a>
             <a href="#contact" className="px-3 py-2 rounded-xl hover:bg-slate-50 hover:text-foreground transition-all duration-200">Contact</a>
             <a 
-              href="/assets/resume.pdf" 
+              href="/assets/Karthik_HR_Resume_OnePage.pdf" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="ml-3 px-4 py-2 rounded-xl bg-accent-indigo text-white hover:bg-accent-indigo/90 hover:scale-[1.02] active:scale-[0.98] transition-all text-xs font-bold shadow-sm"
