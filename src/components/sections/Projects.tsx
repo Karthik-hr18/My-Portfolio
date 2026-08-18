@@ -17,12 +17,18 @@ function getProjectBanner(id: string, title: string) {
   let gradient = "from-indigo-500 via-purple-500 to-pink-500";
   let patternCode = "AI_SUMMARIZER_PIPELINE";
 
-  if (id === "hiretrack") {
+  if (id === "pricing") {
+    gradient = "from-purple-600 via-violet-500 to-indigo-500";
+    patternCode = "DYNAMIC_PRICING_FORECAST";
+  } else if (id === "hiretrack") {
     gradient = "from-blue-600 via-indigo-500 to-sky-500";
     patternCode = "ATS_TRACKING_AUDIT_LOG";
   } else if (id === "jobtracker") {
     gradient = "from-emerald-500 via-teal-500 to-indigo-500";
     patternCode = "OPTIMISTIC_KANBAN_SYNC";
+  } else if (id === "expense") {
+    gradient = "from-emerald-600 via-teal-500 to-cyan-500";
+    patternCode = "MERN_EXPENSE_ANALYTICS";
   }
 
   return (
@@ -156,7 +162,7 @@ export default function Projects({
                             <GithubIcon className="w-4 h-4" />
                           </span>
                         )}
-                        {project.id !== "summarizer" && project.live && (
+                        {project.live && (
                           <span 
                             onClick={(e) => {
                               e.stopPropagation();

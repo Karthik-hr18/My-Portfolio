@@ -29,9 +29,9 @@ A premium, recruiter-facing personal portfolio website designed to showcase full
 
 ## 📂 Core Projects Featured
 
-### 1. AI Document Summarizer
-* **Stack:** FastAPI, Python, React, Tailwind CSS, LangChain
-* **Overview:** A file processing service utilizing local LLM inference engines and semantic chunking to summarize large document payloads.
+### 1. AI Dynamic Pricing & Demand Forecasting Platform
+* **Stack:** React, FastAPI, MongoDB, Docker, Python, TypeScript, XGBoost, Prophet, Scikit-learn, Pandas
+* **Overview:** An end-to-end pricing engine combining offline machine learning forecasts (Prophet, XGBoost) and heuristic margins to optimize prices dynamically.
 
 ### 2. HireTrack ATS Platform
 * **Stack:** TypeScript Monorepo, Node.js, Express.js, MongoDB, Mongoose, Zod, React, Cloudinary
@@ -40,6 +40,10 @@ A premium, recruiter-facing personal portfolio website designed to showcase full
 ### 3. JobTracker Dashboard
 * **Stack:** JavaScript, Node.js, Express.js, MongoDB, Joi, React, @dnd-kit, Framer Motion
 * **Overview:** A touch-responsive personal job tracking pipeline with optimistic state synchronization and gesture isolation.
+
+### 4. MERN Expense Tracker
+* **Stack:** React 19, Node.js, Express.js, MongoDB, Mongoose, JWT, Bootstrap, Recharts
+* **Overview:** A full-stack MERN expense tracker featuring secure JWT per-user authentication and interactive monthly financial visualization charts.
 
 ---
 
